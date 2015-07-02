@@ -6,10 +6,11 @@ using namespace std;
 //3 - Write a program that reads in then divides two numbers.
 
 int main()
-{
-	
+{	
+	//1
 	cout << "Jack";
 
+	//2
 	double x = 0;
 	double y = 0;
 
@@ -17,7 +18,7 @@ int main()
 	cin >> x;
 	cout << "input number 2: ";
 	cin >> y;
-	cout << "input 1 + input 2 = " << x + y << "\n";
+	cout << "input 1 + input 2 = " << x + y << "\n";//adds x and y.
 
 	//3
 	double i = 0;
@@ -27,7 +28,7 @@ int main()
 	cin >> i;
 	cout << "input number 2: ";
 	cin >> j;
-	cout << "input 1 / input 2 = " << i / j << "\n";
+	cout << "input 1 / input 2 = " << i / j << "\n";//divides i and j.
 
 	system("pause");
 }

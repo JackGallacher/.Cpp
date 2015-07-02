@@ -13,11 +13,13 @@ using namespace std;
 
 void menu();//prototype of menu.
 
-int getrandom()//generates random number based on time.
+//generates random number based on time.
+int getrandom()
 {
 	return rand();
 }
-void coin_flip()//simulates a coin flip, if number is above 50 but below 100 it is tails, below 50 and above zero it is heads.
+//simulates a coin flip, if number is above 50 but below 100 it is tails, below 50 and above zero it is heads.
+void coin_flip()
 {
 	int rand_value = getrandom() % (100 - 0) + 0;
 
@@ -34,6 +36,7 @@ void coin_flip()//simulates a coin flip, if number is above 50 but below 100 it 
 		menu();
 	}
 }
+//guessing game.
 void guess_number()
 {
 	int rand_value = getrandom() % (100 - 1) + 0;
@@ -58,16 +61,19 @@ void guess_number()
 		}
 	}
 }
+//automates and solves the guessing game
 void solve_game()
 {
 	int computer_guess = 0;
 	guess_number();
 }
+//switch selection of tasks.
 void menu()
 {
 	int user_input;
 
 	cout << "press 1 to coin flip\n";
+	cout << "press 2 to play the guessing game\n";
 	cin >> user_input;
 
 	switch (user_input)
@@ -87,6 +93,7 @@ void menu()
 		break;
 	}
 }
+//init.
 int main()
 {
 	srand(time(NULL));//seeds the random value with time.

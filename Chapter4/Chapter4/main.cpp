@@ -9,6 +9,7 @@ using namespace std;
 
 int main()
 {
+	//1
 	int x;
 	int y;
 
@@ -30,6 +31,7 @@ int main()
 		cout << "ages are the same \n\n";
 	}
 
+	//2 and 4
 	string user1 = "jack";
 	string user2 = "ben";
 	string user3 = "ryan";
@@ -64,6 +66,7 @@ int main()
 		main();//comment out other tasks to restart login.
 	}
 
+	//3
 	char function;
 	double i;
 	double j;

@@ -7,12 +7,13 @@ using namespace std;
 //2 - write a program the write the lyrics of "12 days of christmas" using switch case
 //3 - write a two player tic-tak-toe game allowing two hums to play, using enums to reprsent values on the board.
 
+//output twelve days of christmas.
 void twelvedays()
 {
 	for (int i = 1; i < 13; i++)
 	{
 		cout << "on the ";
-		switch (i)
+		switch (i)//days switch
 		{
 		case 1:
 			cout << "first day";
@@ -55,7 +56,7 @@ void twelvedays()
 		}
 		cout << " of christmas, my true love gave to me...\n";
 
-		switch (i)
+		switch (i)//items switch
 		{
 		case 12:
 			cout << "twelve drummers drumming\n";
@@ -90,9 +91,12 @@ int P2_choice;
 bool run = true;
 bool P1_win = false;
 bool P2_win = false;
+
+//enum for player icons.
 enum value { CROSS = 'X', CIRCLE = 'O', BLANK = '-' };
 vector <char> board = { BLANK, BLANK, BLANK, BLANK, BLANK, BLANK, BLANK, BLANK, BLANK};
 
+//display board.
 void printboard()
 {
 	for (int i = 0; i < board.size(); i++)
@@ -112,6 +116,7 @@ void printboard()
 		}
 	}
 }
+//checks each possible win condition for each player.
 void checkwin()
 {
 	for (int i = 0; i < 3; i++)
@@ -166,17 +171,20 @@ void checkwin()
 		cout << "\nplayer 2 has won\n";
 	}	
 }
+//tic tac toe game.
 void tictaktoe()
 {
+	//bools to check player turns.
 	bool P1_turn = true;
 	bool P2_turn = false;
 
 	cout << "welcome to tick tac toe, each space on the grid is represented by numbers 1 to 9";
 	cout << "top left is 1, 2 is top middle and so on.\n";
 
+	//game loop.
 	while (run)
 	{
-		if (P1_turn == true)
+		if (P1_turn == true)//P1 turn.
 		{
 			cout << "player one enter co-ordinate (1 to 9)\n";
 			cin >> P1_choice;
@@ -187,7 +195,7 @@ void tictaktoe()
 				cout << "player one enter co-ordinate (1 to 9)\n";
 				cin >> P1_choice;
 			}
-			while (board[P1_choice - 1] == CIRCLE)
+			while (board[P1_choice - 1] == CIRCLE)//taken space handler.
 			{
 				cin.clear();
 				cin.ignore();
@@ -207,7 +215,7 @@ void tictaktoe()
 			P1_turn = false;
 			P2_turn = true;
 		}
-		if (P2_turn == true)
+		if (P2_turn == true)//P2 turn.
 		{
 			cout << "player two enter co-ordinate (1 to 9)\n";
 			cin >> P2_choice;
@@ -218,7 +226,7 @@ void tictaktoe()
 				cout << "player two enter co-ordinate (1 to 9)\n";
 				cin >> P2_choice;
 			}
-			while (board[P2_choice - 1] == CROSS)
+			while (board[P2_choice - 1] == CROSS)//taken space handler.
 			{
 				cin.clear();
 				cin.ignore();
