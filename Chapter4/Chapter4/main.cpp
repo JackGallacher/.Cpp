@@ -2,9 +2,13 @@ using namespace std;
 #include <iostream>
 #include <string>
 
+//1 - ask the user for two ages, indicate who is older.
+//2 - implement a simple password system that takes a numbered password.
+//3 - write a small calculator take takes as input one of four operators and the two arguments, then outputs a result.
+//4 - expand the password checking program to make it take multiple usernames and passwords and ensure the right username is used for the right password.
+
 int main()
 {
-	//1
 	int x;
 	int y;
 
@@ -26,7 +30,6 @@ int main()
 		cout << "ages are the same \n\n";
 	}
 
-	//2
 	string user1 = "jack";
 	string user2 = "ben";
 	string user3 = "ryan";
@@ -61,7 +64,6 @@ int main()
 		main();//comment out other tasks to restart login.
 	}
 
-	//3
 	char function;
 	double i;
 	double j;
