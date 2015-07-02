@@ -1,0 +1,89 @@
+using namespace std;
+#include <iostream>
+#include <string>
+#include <ctime>
+#include <cstdlib>
+
+
+void menu();//prototype of menu.
+
+int getrandom()//generates random number based on time.
+{
+	return rand();
+}
+void coin_flip()//simulates a coin flip, if number is above 50 but below 100 it is tails, below 50 and above zero it is heads.
+{
+	int rand_value = getrandom() % (100 - 0) + 0;
+
+	if (rand_value < 50)
+	{
+		cout << "coin is heads\n";
+		//cout << rand_value << "\n";//outputs the random value
+		menu();
+	}
+	if (rand_value > 50)
+	{
+		cout << "coin is tails\n";
+		//cout << rand_value << "\n";//outputs the random value
+		menu();
+	}
+}
+void guess_number()
+{
+	int rand_value = getrandom() % (100 - 1) + 0;
+	int guess = 0;
+
+	while (guess != rand_value)
+	{
+		cout << "pick a number between 1 and 100\n";
+		cin >> guess;
+
+		if (guess < rand_value)
+		{
+			cout << "too low\n";
+		}
+		if (guess > rand_value)
+		{
+			cout << "too high\n";
+		}
+		if (guess == rand_value)
+		{
+			cout << "just right\n";
+		}
+	}
+}
+void solve_game()
+{
+	int computer_guess = 0;
+	guess_number();
+}
+void menu()
+{
+	int user_input;
+
+	cout << "press 1 to coin flip\n";
+	cin >> user_input;
+
+	switch (user_input)
+	{
+	case 1:
+		coin_flip();
+		break;
+	case 2:
+		guess_number();
+		break;
+	case 3:
+		solve_game();
+		break;
+	default:
+		cout << "you did not select a valid option, please try again \n";
+		menu();
+		break;
+	}
+}
+int main()
+{
+	srand(time(NULL));//seeds the random value with time.
+	menu();
+	system("pause");
+}
