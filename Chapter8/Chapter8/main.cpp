@@ -139,7 +139,9 @@ void slots()
 }
 void gethand()
 {
-	vector<string> deck;//ajustable vector for the cards as 
+	string hand[6]; //array for storing hand.
+	vector<string> deck;//ajustable vector for the card deck.
+
 	string names[13] = { "Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King" };
 	string house[4] = { "Clubs", "Spades", "Hearts", "Diamonds" };
 
@@ -153,17 +155,28 @@ void gethand()
 			i++;
 		}
 	}
-	cout << "your hand is: ";
+	cout << "your hand is: \n";
 	for (int i = 0; i < 5; i ++)//outputs the players hand, each card is based upon a random number between 1 and 52.
 	{
-		string selectedcard = deck[getrandom(1, 52)];
-		cout << selectedcard << "\n";
-		//todo - delete card from vector so that if the hand is redrawn, these current cards will not chosen again.
+		int card_position = getrandom(1, 52);//gets the numerical value of the current card.
+		string selectedcard = deck[card_position];
+
+		hand[i] = selectedcard;
+		cout << hand[i] << "\n";
+
+
+		//cout << selectedcard << "\n";
+		deck.erase(deck.begin() + card_position--);//removes the current card from the vector.
+		cout << "\n";
+	}
+	for (int i = 0; i < deck.size(); i++)//prints the current deck of cards, for testing purposes.
+	{
+		cout <<deck[i] << "\n";
 	}
 }
 void poker()
 {
-	cout << "welcome to poker";
+	cout << "welcome to poker\n";
 	gethand();
 }
 //switch selection of tasks.
