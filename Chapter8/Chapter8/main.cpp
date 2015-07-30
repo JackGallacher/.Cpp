@@ -71,7 +71,7 @@ void solve_game()
 	while (guess != rand_value)
 	{
 		cout << "pick a number between 1 and 100\n";
-		guess = getrandom(1,100);// just picks a random number between 1 and 100 automtically, without having the user input
+		guess = getrandom(1, 100);// just picks a random number between 1 and 100 automtically, without having the user input
 		cout << guess << "\n";
 
 		if (guess < rand_value)
@@ -137,11 +137,8 @@ void slots()
 		}
 	}
 }
-void gethand()
+vector <string> filldeck(vector <string> &deck)//this is called once to fill the deck with cards.
 {
-	string hand[6]; //array for storing hand.
-	vector<string> deck;//ajustable vector for the card deck.
-
 	string names[13] = { "Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King" };
 	string house[4] = { "Clubs", "Spades", "Hearts", "Diamonds" };
 
@@ -155,29 +152,54 @@ void gethand()
 			i++;
 		}
 	}
-	cout << "your hand is: \n";
-	for (int i = 0; i < 5; i ++)//outputs the players hand, each card is based upon a random number between 1 and 52.
+	return deck;
+}
+vector <string> fillhand(vector <string> &hand)//returns a vector with 5 cards from the deck.
+{
+	vector <string> mydeck;
+	filldeck(mydeck);
+
+	for (int i = 0; i < 5; i++)
 	{
-		int card_position = getrandom(1, 52);//gets the numerical value of the current card.
-		string selectedcard = deck[card_position];
-
-		hand[i] = selectedcard;
-		cout << hand[i] << "\n";
-
-
-		//cout << selectedcard << "\n";
-		deck.erase(deck.begin() + card_position--);//removes the current card from the vector.
-		cout << "\n";
+		int card = getrandom(0, 51);//generate random number to determin selected card position.
+		string selectedcard = mydeck[card];
+		hand.push_back(selectedcard);
 	}
-	for (int i = 0; i < deck.size(); i++)//prints the current deck of cards, for testing purposes.
+	return hand;
+}
+void showhand(vector <string> &hand)//the vector is passed to this function and it is displayed in the console.
+{
+	cout << "your hand is:\n";
+	for (int i = 0; i < 5; i++)
 	{
-		cout <<deck[i] << "\n";
+		cout << hand[i] << "\n";
 	}
 }
 void poker()
 {
+	int input;
+
 	cout << "welcome to poker\n";
-	gethand();
+	vector <string> hand;//defines the hand vector.
+	fillhand(hand);//init fill.
+	showhand(hand);//init display.
+
+	while (true)
+	{
+		cout << "press 1 for a new hand";
+		cin >> input;
+		if (input == 1)
+		{
+			hand.clear();//clears the current vector.
+			fillhand(hand);//refills it with new cards.
+			showhand(hand);//calls the display function.
+			checkhand(hand);
+		}
+		else
+		{
+			break;//basic break if another key other than 1 is pressed, just to get out of the loop.
+		}
+	}
 }
 //switch selection of tasks.
 void menu()
