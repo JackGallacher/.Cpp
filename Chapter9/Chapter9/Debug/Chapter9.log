@@ -1,4 +1,4 @@
-﻿Build started 05/08/2015 13:02:35.
+﻿Build started 09/08/2015 12:25:37.
      1>Project "E:\My Documents\Github\Cplusplus\Chapter9\Chapter9\Chapter9.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          E:\Program Files\Visual Studio 2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
@@ -10,4 +10,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.57
+Time Elapsed 00:00:00.79
