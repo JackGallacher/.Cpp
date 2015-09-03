@@ -4,6 +4,7 @@ using namespace std;
 #include<ctime>
 #include<array>
 #include<algorithm>
+#include <string>
 
 void insertion_sort(int array[], int size)//insertion sort function.
 {
@@ -53,7 +54,7 @@ bool issorted(int array[], int size)
 	}
 	return true;
 }
-int main()
+void array_program()
 {
 	srand(time(NULL));
 
@@ -73,5 +74,21 @@ int main()
 		cout << "array is sorted, printing...\n";
 		display(myarray, 50);
 	}
+}
+int main()
+{
+	int input = 0;
+	cout << "1: array program\n";
+	cin >> input;
+	switch (input)
+	{
+	case 1:
+		array_program();
+		break;
+	default:
+		cout << "incorrect input submitted, try again.";
+		main();
+		break;
+	};
 	system("pause");
 }
