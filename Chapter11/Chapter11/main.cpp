@@ -3,46 +3,19 @@ using namespace std;
 #include <string>
 #include <time.h>//allows random.
 #include <vector>
-//#include <cstdlib>
+#include <algorithm>
+
 
 
 
 
 //1 - Write a program that lets the user fill in a single structure with the name, address and phone number of a single person.
 //2 - Create and array of spaceship objects and wrtie a program that continually updates thier positions until they all go off screen. Assume that the size of the screen is 1024 x 760 pixels.
-// 3 - Create and address bok program that builds on task 1. This time, the user should not just be able to fill a single stucture, but should be able to add new entries. Add the abilty to browse
-//the list of entries.
+/*3 - Create and address bok program that builds on task 1. This time, the user should not just be able to fill a single stucture, but should be able to add new entries. Add the abilty to browse
+the list of entries.*/
+/*4 - Write a prgogram that allows the user to enter the high scores of a game, keeping track of the name of the user and the score. Add the ability to show the highest score for each user,
+all scores for a particular user, all scores from all users and the list of users*/
 
-
-struct spaceship//defines a spaceship struct. 
-{
-	int x_position;
-	int y_position;
-	string name;
-};
-spaceship create()//applies default variables to a spaceship object.
-{
-	spaceship ship;
-	ship.x_position = 0;
-	ship.y_position = 0;
-return ship;
-}
-spaceship update(spaceship ship)
-{
-	if (ship.x_position <= 1024)
-	{
-		ship.x_position += rand() % 5;//random number between 0 and 5.
-	}
-	if (ship.x_position <= 768)
-	{
-		ship.y_position += rand() % 5;//random number between 0 and 5.
-	}
-	else
-	{
-		//cout << "position is out of screen!";
-	}
-	return ship;
-}
 struct notebook//notebook strcut for storing data of an individual, adapted to accomodate task 3.
 {
 	string name;
@@ -54,7 +27,7 @@ void notebook_program()//adepred to accomidate task 3.
 	vector <notebook> mynotebook;//creates an ajustable vector of type "notebook"
 	notebook person;//creates a new instance of a notebook struct
 	int input = 0;//used to record the users input
-	int vector_position = 0;//used to record the current vecotor position.
+	int vector_position = 0;//used to record the current vector position.
 
 	do
 	{
@@ -66,12 +39,16 @@ void notebook_program()//adepred to accomidate task 3.
 		case 1:
 			mynotebook.push_back(notebook());
 			cin.ignore();
+
 			cout << "enter name: ";
 			getline(cin, mynotebook[vector_position].name);
+
 			cout << "enter address: ";
 			getline(cin, mynotebook[vector_position].address);
+
 			cout << "enter phone number: ";
 			cin >> mynotebook[vector_position].phone_number;
+
 			vector_position++;
 			break;
 		case 2:
@@ -92,6 +69,35 @@ void notebook_program()//adepred to accomidate task 3.
 			break;
 		}
 	} while (1);
+}
+struct spaceship//defines a spaceship struct. 
+{
+	int x_position;
+	int y_position;
+	string name;
+};
+spaceship create()//applies default variables to a spaceship object.
+{
+	spaceship ship;
+	ship.x_position = 0;
+	ship.y_position = 0;
+	return ship;
+}
+spaceship update(spaceship ship)
+{
+	if (ship.x_position <= 1024)
+	{
+		ship.x_position += rand() % 5;//random number between 0 and 5.
+	}
+	if (ship.x_position <= 768)
+	{
+		ship.y_position += rand() % 5;//random number between 0 and 5.
+	}
+	else
+	{
+		//cout << "position is out of screen!";
+	}
+	return ship;
 }
 void spaceship_program()
 {
@@ -122,67 +128,75 @@ void spaceship_program()
 struct highscore
 {
 	string player;
-	vector <string> score;
-	//string score;
+	string score;
+};
+struct find_player//function object to allow the find_if vector parameter to work with structs, this passes back the player name when "find_player" is called. 
+{
+	string id;
+	find_player(string id) : id(id) {}
+	bool operator () (highscore x)
+	{
+		return x.player == id;
+	}
 };
 void highscore_program()
 {
 	int input = 0;
-	int vector_position = 0;
 
-	vector <vector <highscore>> database;
-	vector <highscore> players;
+	vector <highscore> database;//a vector which stores a highscore stuct in each element.
+	highscore player;//a stuct to push onto the vector.
 
-	string new_score;
+	int i = 0;
 
-	int score_position = 0;
-
-	do 
+	do
 	{
 		cout << "Press 1 to add new user and score\n";
-		cout << "Press 2 to add new score to a user\n";
-		cout << "Press 3 to display high scores\n";
-		cout << "Press 4 to display the list of players\n";
-		cout << "Press 5 to search for a player and view thier scores\n";
+		cout << "Press 2 to display high scores\n";
+		cout << "Press 3 to display the list of players\n";
+		cout << "Press 4 to search for a player and view thier scores\n";
 		cin >> input;
 
 		switch (input)
 		{
 		case 1:
-			players.push_back(highscore());
-			database.push_back(players);
-
 			cin.ignore();
-			cout << "enter name: ";
-			getline(cin, players[vector_position].player);
-			cout << "enter score: ";
-			getline(cin, players[vector_position].score[0]);
+			cout << "Input player name: ";
+			getline(cin, player.player);
 
-			vector_position++;
-			score_position++;
+			cout << "Input player score: ";
+			getline(cin, player.score);
+
+			database.push_back(player);
+
 			break;
 		case 2:
-			cout << "input number between 0 and " << database.size() << " to add a new score to\n";
-			cin >> input;
-
-			cout << "enter new score for player" << input << "\n";
-			cin >> new_score;
-
-			players[input].score[players[input].score.size() + 1] = new_score;
-
-			//players.scorepush_back(score);
-			break;
-		case 5:
-			cout << "input number between 0 and " << database.size() << "\n";
-			cin >> input;
-			cout << players[input].player << "\n";
-
-			for (int i = 0; i <= players.size(); i++)
+			for (int i = 0; i <= database.size(); i++)
 			{
-				cout << players[input].score[i] << "\n";
+				cout << database[i].player << "\n" << database[i].score<< "\n";				
+			}
+			break;
+		case 3:
+			for (int i = 0; i < database.size(); i++)
+			{
+				cout << "Player "<< i << ": "<< database[i].player << "\n";
+			}
+			break;
+		case 4:
+			string name;
+
+			cin.ignore();
+			cout << "Enter the players name who you wish to see: ";
+			getline(cin, name);
+
+			if (find_if(database.begin(), database.end(), find_player(name)) != database.end())
+			{
+				cout << "Player: " << database[find_if(database.begin(), database.end(), find_player(name)) - database.begin()].player << "\n";
+				cout << "Score: " << database[find_if(database.begin(), database.end(), find_player(name)) - database.begin()].score[i] << "\n\n";
 			}
 			break;
 		}
+
+
 	} while (1);
 }
 int main()
