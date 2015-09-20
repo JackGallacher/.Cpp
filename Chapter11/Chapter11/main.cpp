@@ -142,6 +142,7 @@ struct find_player//function object to allow the find_if vector parameter to wor
 void highscore_program()
 {
 	int input = 0;
+	string name;
 
 	vector <highscore> database;//a vector which stores a highscore stuct in each element.
 	highscore player;//a stuct to push onto the vector.
@@ -170,7 +171,7 @@ void highscore_program()
 
 			break;
 		case 2:
-			for (int i = 0; i <= database.size(); i++)
+			for (int i = 0; i < database.size(); i++)
 			{
 				cout << database[i].player << "\n" << database[i].score<< "\n";				
 			}
@@ -182,8 +183,6 @@ void highscore_program()
 			}
 			break;
 		case 4:
-			string name;
-
 			cin.ignore();
 			cout << "Enter the players name who you wish to see: ";
 			getline(cin, name);
@@ -193,6 +192,9 @@ void highscore_program()
 				cout << "Player: " << database[find_if(database.begin(), database.end(), find_player(name)) - database.begin()].player << "\n";
 				cout << "Score: " << database[find_if(database.begin(), database.end(), find_player(name)) - database.begin()].score[i] << "\n\n";
 			}
+		default:
+			cout << "Wrong input, try again";
+				break;
 			break;
 		}
 
