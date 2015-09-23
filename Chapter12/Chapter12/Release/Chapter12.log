@@ -1,0 +1,16 @@
+﻿Build started 23/09/2015 18:01:18.
+     1>Project "E:\My Documents\Github\Cplusplus\Chapter12\Chapter12\Chapter12.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         E:\Program Files\Visual Studio 2015\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Release\\" /Fd"Release\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+       Link:
+         E:\Program Files\Visual Studio 2015\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\My Documents\Github\Cplusplus\Chapter12\Release\Chapter12.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"E:\My Documents\Github\Cplusplus\Chapter12\Release\Chapter12.pdb" /OPT:REF /OPT:ICF /LTCG:incremental /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\My Documents\Github\Cplusplus\Chapter12\Release\Chapter12.lib" /MACHINE:X86 /SAFESEH Release\main.obj
+         Generating code
+         All 10 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+         Finished generating code
+         Chapter12.vcxproj -> E:\My Documents\Github\Cplusplus\Chapter12\Release\Chapter12.exe
+     1>Done Building Project "E:\My Documents\Github\Cplusplus\Chapter12\Chapter12\Chapter12.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.91
