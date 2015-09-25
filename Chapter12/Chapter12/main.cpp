@@ -80,11 +80,18 @@ int main()
 		cout << "one is largest\n";
 	}
 
-	//int x = 4;
-	//int y = 77;
+	int value_1 = 0;
+	int value_2 = 77;
 
-	//swap(x, y);
-	//cout << x << " " << y << "\n";
+	cout << "input first value: ";
+	cin >> value_1;
+
+	cout << "input second value: ";
+	cin >> value_2;
+
+	cout << "before swap value 1 is " << value_1 << "and vlaue two is " << value_2;
+	swap(value_1, value_2);
+	cout << "\nafter swap value 1 is " << value_1 << "and vlaue two is " << value_2;
 
 	system("pause");
 }
