@@ -30,11 +30,11 @@ void swap(int& x, int& y)
 
 int main()
 {
-	int x = 0;//sets int to 0;
-	int* pointer = &x;//make a pointer at the memory position of x
-	*pointer = 25;//sets the memory location of x to 25.
-	cout << pointer<< "\n";//outputs the memory position of x;
-	cout << *pointer << "\n";//output the dereferenced value in the memory position of x.
+	//int x = 0;//sets int to 0;
+	//int* pointer = &x;//make a pointer at the memory position of x
+	//*pointer = 25;//sets the memory location of x to 25.
+	//cout << pointer<< "\n";//outputs the memory position of x;
+	//cout << *pointer << "\n";//output the dereferenced value in the memory position of x.
 
 	string first_name, second_name;
 
