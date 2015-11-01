@@ -1,6 +1,7 @@
 using namespace std;
 #include <iostream>
 #include <string>
+#include <array>
 
 //dynamic memory allocation example. Creates array of pointers with szie 10, when the array reaches 10 elements, the size is doubled and so on.
 int* extend_array(int* values, int* size)
@@ -57,7 +58,7 @@ void pointer_arithmetic()
 	int x[3];
 	x[0] = 1;
 	x[1] = 2;
-	x[2] = 3;£
+	x[2] = 3;
 	*(x + 3) = 120;//pointer arithmetic to assign 120 to x[3].
 
 	for (int i = 0; i <= 3; i ++)
@@ -66,7 +67,7 @@ void pointer_arithmetic()
 	}
 }
 
-void pointer_array()
+void pointer_array()//complicated way to make a 2D array.
 {
 	int **my_array;//double pointer.
 	my_array = new int*[3];//creates an array of pointers with 3 locations, pointer to a pointer.
@@ -88,11 +89,40 @@ void pointer_array()
 	}
 	delete[] my_array;//lastly, delete the pointer.
 	//this could all be done with int my_array[3][3]; !!
+	//Unless you did need to make a resizable 2 demensional array!
+}
+
+void multiplication_table()
+{
+	int **table;//pointer to pointer.
+	int size_x = 0;
+	int size_y = 0;
+
+	cout << "Enter x size for multiplication table: ";
+	cin >> size_x;
+
+	cout << "Enter y size for mmultiplication table: ";
+	cin >> size_y;
+
+
+	table = new int*[size_x];//creates and array of pointers with size of the variable "size"
+	for (int i = 1; i < size_x + 1; i ++)
+	{
+		table[i] = new int[size_y];
+	}
+	for (int x = 1; x < size_x + 1; x++)
+	{
+		for (int y = 1; y < size_y + 1; y++)
+		{						
+			table[x][y] = x * y;
+			cout << x << " * " << y << " = " << table[x][y] << "\n";
+		}
+	}
 }
 
 int main()
 {
-
+	multiplication_table();
 
 	system("pause");
 }
