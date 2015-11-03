@@ -92,37 +92,55 @@ void pointer_array()//complicated way to make a 2D array.
 	//Unless you did need to make a resizable 2 demensional array!
 }
 
-void multiplication_table()
+void multiplication_table(int size_x, int size_y)
 {
-	int **table;//pointer to pointer.
-	int size_x = 0;
-	int size_y = 0;
+	int **table;
 
-	cout << "Enter x size for multiplication table: ";
-	cin >> size_x;
-
-	cout << "Enter y size for mmultiplication table: ";
-	cin >> size_y;
-
-
-	table = new int*[size_x];//creates and array of pointers with size of the variable "size"
-	for (int i = 1; i < size_x + 1; i ++)
+	table = new int*[size_x];
+	for (int i = 0; i < size_x; i ++)
 	{
 		table[i] = new int[size_y];
 	}
-	for (int x = 1; x < size_x + 1; x++)
+	for (int x = 0; x < size_x; x++)
 	{
-		for (int y = 1; y < size_y + 1; y++)
+		for (int y = 0; y < size_y; y++)
 		{						
 			table[x][y] = x * y;
 			cout << x << " * " << y << " = " << table[x][y] << "\n";
 		}
 	}
+	delete[] table;
+}
+void three_multiplication_table(int size_x, int size_y, int size_z)
+{
+	int ***table;
+
+	table = new int**[size_x];
+	for (int i = 0; i < size_x; i++)
+	{
+		table[i] = new int*[size_y];
+		for (int j = 0; j < size_y; j++)
+		{
+			table[i][j] = new int[size_z];
+		}
+	}
+	for (int x = 0; x < size_x; x++)
+	{
+		for (int y = 0; y < size_y; y++)
+		{
+			for (int z = 0; z < size_z; z++)
+			{
+				table[x][y][z] = x * y * z;
+				cout << x << " * " << y << " * " << z << " = " << table[x][y][z] << "\n";
+			}
+		}
+	}
+	delete[] table;
 }
 
 int main()
 {
-	multiplication_table();
-
+	multiplication_table(25, 22);
+	three_multiplication_table(2, 4, 5);
 	system("pause");
 }
