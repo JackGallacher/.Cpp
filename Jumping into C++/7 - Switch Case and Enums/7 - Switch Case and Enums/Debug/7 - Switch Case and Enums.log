@@ -1,0 +1,14 @@
+﻿Build started 04/11/2015 14:27:27.
+     1>Project "E:\My Documents\Github\Cplusplus\Jumping into C++\7 - Switch Case and Enums\7 - Switch Case and Enums\7 - Switch Case and Enums.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         E:\Program Files\Visual Studio 2015\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
+         Source.cpp
+     1>e:\my documents\github\cplusplus\jumping into c++\7 - switch case and enums\7 - switch case and enums\source.cpp(102): warning C4018: '<': signed/unsigned mismatch
+       Link:
+         E:\Program Files\Visual Studio 2015\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\My Documents\Github\Cplusplus\Jumping into C++\7 - Switch Case and Enums\Debug\7 - Switch Case and Enums.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"E:\My Documents\Github\Cplusplus\Jumping into C++\7 - Switch Case and Enums\Debug\7 - Switch Case and Enums.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\My Documents\Github\Cplusplus\Jumping into C++\7 - Switch Case and Enums\Debug\7 - Switch Case and Enums.lib" /MACHINE:X86 Debug\Source.obj
+         7 - Switch Case and Enums.vcxproj -> E:\My Documents\Github\Cplusplus\Jumping into C++\7 - Switch Case and Enums\Debug\7 - Switch Case and Enums.exe
+     1>Done Building Project "E:\My Documents\Github\Cplusplus\Jumping into C++\7 - Switch Case and Enums\7 - Switch Case and Enums\7 - Switch Case and Enums.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.86
