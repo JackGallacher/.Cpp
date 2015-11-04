@@ -1,0 +1,1 @@
+Tasks from the book "Jumping into C++" by Alex Allain.
