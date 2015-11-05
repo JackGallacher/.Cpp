@@ -3,10 +3,6 @@ using namespace std;
 #include <string>
 #include <vector>
 
-//1 - rewrite the meny program using switch case.
-//2 - write a program the write the lyrics of "12 days of christmas" using switch case
-//3 - write a two player tic-tak-toe game allowing two hums to play, using enums to reprsent values on the board.
-
 //output twelve days of christmas.
 void twelvedays()
 {
@@ -86,8 +82,7 @@ void twelvedays()
 	}
 }
 
-int P1_choice;
-int P2_choice;
+int P1_choice = 0, P2_choice = 0;
 bool run = true;
 bool P1_win = false;
 bool P2_win = false;
@@ -273,7 +268,6 @@ void menu()
 		break;
 	}
 }
-
 int main()
 {
 	menu();

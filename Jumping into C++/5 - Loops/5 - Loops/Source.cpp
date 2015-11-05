@@ -2,18 +2,8 @@ using namespace std;
 #include <iostream>
 #include <string>
 
-//1 - output the song "99 bottles of beer".
-//2 - write a menu that allows users to select from a list of options.
-//3 - write a program that computes a running sum of inputs, terminating when 0 is pressed.
-//4 - write a password promt that allows only a certain amount of attempts.
-//5 - write a program that displays the first 20 prime numbers.
-/*6 - write a program that provides the option of tallying up the results of a poll with 3 possible values. the first input is the question followed by the possible answers. when zero is pressed
-the results are tallied and shown in a bar graph*/
-
-
 int main()
 {
-	//1
 	int bottles = 99;
 	string word = "bottles";
 
@@ -36,7 +26,6 @@ int main()
 		cout << "---------------------------------------------------------------------- \n";
 	}
 
-	//2
 	string input;
 	do
 	{
@@ -62,9 +51,7 @@ int main()
 		cout << "you chose option 3\n";
 	}
 
-	//3
-	int current_number = 0;
-	int previous_number = 0;
+	int current_number = 0, previous_number = 0;
 
 	while (1)
 	{
@@ -78,7 +65,6 @@ int main()
 		previous_number = current_number + previous_number;
 	}
 
-	//4
 	int attempts = 5;
 	string password = "password";
 	string user_attempt;
@@ -106,22 +92,14 @@ int main()
 		}
 	}
 
-	//5
 	for (int i = 1; i < 21; i++)
 	{
 		cout << i * i << "\n";
 	}
 
-	//6
-	string question;
-	string answer_one;
-	string answer_two;
-	string answer_three;
+	string question, answer_one, answer_two, answer_three;
 
-	int select_one = 0;
-	int select_two = 0;
-	int select_three = 0;
-
+	int select_one = 0, select_two = 0, select_three = 0;
 	int user_answer = 0;
 
 	cout << "enter question: ";
@@ -187,6 +165,5 @@ int main()
 			break;
 		}
 	}
-
 	system("pause");
 }

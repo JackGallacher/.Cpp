@@ -5,17 +5,6 @@ using namespace std;
 #include <vector>
 #include <algorithm>
 
-
-
-
-
-//1 - Write a program that lets the user fill in a single structure with the name, address and phone number of a single person.
-//2 - Create and array of spaceship objects and wrtie a program that continually updates thier positions until they all go off screen. Assume that the size of the screen is 1024 x 760 pixels.
-/*3 - Create and address bok program that builds on task 1. This time, the user should not just be able to fill a single stucture, but should be able to add new entries. Add the abilty to browse
-the list of entries.*/
-/*4 - Write a prgogram that allows the user to enter the high scores of a game, keeping track of the name of the user and the score. Add the ability to show the highest score for each user,
-all scores for a particular user, all scores from all users and the list of users*/
-
 struct notebook//notebook strcut for storing data of an individual, adapted to accomodate task 3.
 {
 	string name;
@@ -225,12 +214,5 @@ int main()
 		main();
 		break;
 	}
-
-
-
-
-
-
-
 	system("pause");
 }

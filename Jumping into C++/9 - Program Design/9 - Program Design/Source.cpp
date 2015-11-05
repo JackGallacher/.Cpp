@@ -32,8 +32,6 @@ void prime_finder()
 {
 	int n;//current number to check for prime factors.
 	int factortotal = 0;
-
-
 	for (int x = 0; x <= 1000; x++)//loops for 1 to 1000;
 	{
 		int factortotal = 0;
@@ -74,16 +72,6 @@ void checkprime(int number)
 		cout << number << "\n";
 	}
 }
-
-
-
-
-
-
-
-
-
-
 void number_conveter()
 {
 	int input = 0;
@@ -111,7 +99,6 @@ void convert(int input)
 		{
 			convert(input % 1000);
 		}
-
 	}
 	else if (input >= 100)//100 to 999
 	{

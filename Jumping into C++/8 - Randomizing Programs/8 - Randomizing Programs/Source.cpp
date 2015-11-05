@@ -6,16 +6,9 @@ using namespace std;
 #include <vector>
 #include <algorithm>
 
-//1 - write a program that simulates a coinflip.
-//2 - write a program that picks a number between 0 and 100 and lets the user guess the number, the programs says "too high" "too low" or "just right" based on the closeness of the guess.
-//3 - write a program that solves the guessing game.
-//4 - make a "slot machine" that randomly displays the results of the machine to the player, have three or more values for each wheel and print out winnings if the values match.
-//5 - write a program to play poker, give 5 cards to the player, let the player choose new cards and determine how good the hand is. keep track of the cards that heve been drawn, and dont allow them to be drawn again.
-
-
 void menu();//prototype of menu.
 
-			//generates random number based on time.
+//generates random number based on time.
 int getrandom(int low, int high)
 {
 	return rand() % (high - low + 1) + low;// exmple: <high = 100, low = 0> (100 - 0 + 1) + 0 = 101: this then gives a 0 to 100 range.
@@ -67,7 +60,6 @@ void solve_game()
 {
 	int rand_value = getrandom(1, 100);
 	int guess = 0;
-
 	while (guess != rand_value)
 	{
 		cout << "pick a number between 1 and 100\n";
@@ -117,7 +109,6 @@ void slots()
 			cout << "incorrect input, please spin again.\n";
 		}
 	}
-
 	if (winner == true)//produces output based upon the numbers that are the same.
 	{
 		if (numbers[0] == 1 && numbers[1] == 1 && numbers[2] == 1)
@@ -147,8 +138,7 @@ vector <string> filldeck(vector <string> &deck)//this is called once to fill the
 	{
 		for (int k = 0; k < 4; k++)//house slot
 		{
-			deck.push_back(names[j] + " of " + house[k]); //= names[j] + " of " + house[k];
-														  //cout << deck[i] << "\n";
+			deck.push_back(names[j] + " of " + house[k]);
 			i++;
 		}
 	}
