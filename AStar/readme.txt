@@ -1,0 +1,1 @@
+C++ implementation of the A* pathfinding algorithm in console. A 20 x 20 grid is used in this code but a larger grid can be implemented by inputting in a new map and changing the map size variables. If a path can be found, the program will output the coordinates of each algorithm step.
