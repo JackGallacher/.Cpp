@@ -1,4 +1,4 @@
-﻿Build started 04/11/2015 12:14:55.
+﻿Build started 07/11/2015 15:00:12.
      1>Project "E:\My Documents\Github\Cplusplus\Jumping into C++\14 - Dynamic Memory Allocation\14 - Dynamic Memory Allocation\14 - Dynamic Memory Allocation.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          E:\Program Files\Visual Studio 2015\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
@@ -10,4 +10,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.74
+Time Elapsed 00:00:00.82

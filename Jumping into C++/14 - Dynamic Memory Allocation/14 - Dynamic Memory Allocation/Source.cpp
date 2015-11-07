@@ -3,16 +3,6 @@ using namespace std;
 #include <string>
 #include <array>
 
-/*1 - Write a fucntion that builds a two dimensional multiplication table with arbitrary sizes of the two dimensions.*/
-/*2 - Write a function that takes three arguments, length width and height, dynamically allocated a three dimensional array with those values and fills the
-three dimensional array with multiplication tables.*/
-/*3 - Write out a program that points out the memory addresses of each element in a two dimensionl array.*/
-
-
-
-
-
-
 //dynamic memory allocation example. Creates array of pointers with szie 10, when the array reaches 10 elements, the size is doubled and so on.
 int* extend_array(int* values, int* size)
 {
@@ -98,8 +88,6 @@ void pointer_array()//complicated way to make a 2D array.
 		delete[] my_array[i];
 	}
 	delete[] my_array;//lastly, delete the pointer.
-					  //this could all be done with int my_array[3][3]; !!
-					  //Unless you did need to make a resizable 2 demensional array!
 }
 
 void multiplication_table(int size_x, int size_y)
@@ -166,10 +154,131 @@ void memory_location(int size_x, int size_y)
 	delete[] table;
 }
 
+struct Person//the array needs to have multiple data types per person, so a struct will fulfill this need.
+{
+	string name = "";
+	int days = 0;
+};
+Person* resize_array(Person* array_data, int* array_size)
+{
+	*array_size *= 2;//doubles the array size.
+	Person* resized_array = new Person[*array_size];//creates a new Person array of the new size.
+
+	for (int i = 0; i < *array_size; i++)
+	{
+		resized_array[i] = array_data[i];//copies data to new array
+	}
+	return resized_array;
+	delete[] array_data;
+}
+void print_array(Person* friend_array, int array_position)
+{
+	for (int i = 0; i < array_position; i++)//print array.
+	{
+		cout << "array position [" << i << "] = Name: " << friend_array[i].name << ",  Days: " << friend_array[i].days << "\n";
+	}
+	delete[] friend_array;//free memory.
+}
+void sort_array(Person* friend_array, int array_position)//shell sort to arange names and values in decending order.
+{
+	int temp;
+	string temp_name;
+
+	int flag = 1;
+	int numLength = sizeof(friend_array);
+	int d = numLength;
+
+	while (flag || (d > 1))
+	{
+		flag = 0;
+		d = (d + 1) / 2;
+		for (int i = 0; i < numLength - d; i++)
+		{
+			if (friend_array[i + d].days > friend_array[i].days)
+			{
+				temp = friend_array[i + d].days;
+				temp_name = friend_array[i + d].name;
+
+				friend_array[i + d].days = friend_array[i].days;
+				friend_array[i + d].name = friend_array[i].name;
+
+				friend_array[i].days = temp;
+				friend_array[i].name = temp_name;
+				flag = 1;
+			}
+		}
+	}
+	print_array(friend_array, array_position);
+	delete[] friend_array;//free memory.
+}
+void friends_list()
+{
+	int array_size = 5;//init array size.
+	int array_position = 0;//defailt array position.
+
+	Person* friend_array;//defines pointer of struct type.
+	friend_array = new Person[array_size];
+
+	string name;
+	int friend_position = 0;
+	int days = 0;
+
+	while (true)
+	{
+		int input = 0;
+		cout << "1 - Add Friend\n2 - Update Friend\n3 - Display friends.\n4 - Sort array\n\n";
+		cin >> input;
+
+		switch (input)
+		{
+		case 1:
+			if (array_position == array_size + 1)
+			{
+				cout << "array limit nearly reached, resizing array.";
+				friend_array = resize_array(friend_array, &array_size);
+				cout << "new array size is: " << sizeof(friend_array);
+			}
+			cout << "input friend name: ";
+			cin >> friend_array[array_position].name;
+
+			cout << "input days since you saw them: ";
+			cin >> friend_array[array_position].days;
+			cout << "\n";
+
+			array_position++;//increment array position.
+			break;
+		case 2: 
+			cout << "input friend name: ";
+			cin >> name;
+
+			for (int i = 0; i < array_size; i++)
+			{
+				if (friend_array[i].name == name)//finds the correct array member based on its name.
+				{
+					friend_position = i;
+				}
+			}
+
+			cout << "input new days ";
+			cin >> friend_array[friend_position].days;
+			cout << "days updated.";
+			break;
+		case 3:
+			print_array(friend_array, array_position);
+			break;
+		case 4:
+			sort_array(friend_array, array_position);
+			break;
+		}
+	}
+	delete[] friend_array;
+}
+
 int main()
 {
 	//multiplication_table(25, 22);
 	//three_multiplication_table(2, 4, 5);
-	memory_location(2, 3);
+	//memory_location(2, 3);
+	friends_list();
 	system("pause");
 }
