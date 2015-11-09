@@ -1,0 +1,1 @@
+A quick implementation of a singleton factory class where several animals are created using one class. 
