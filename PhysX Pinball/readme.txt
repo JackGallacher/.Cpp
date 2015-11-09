@@ -1,0 +1,1 @@
+This is a pinball table I created entirly in the PhysX SDK. I was able to create an table that had the same coefficicnet and geomenty of some of its real life counterparts. Intructions for plying the table are displays on the screen when you open the progam.
