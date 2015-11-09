@@ -1,0 +1,1 @@
+A program that is being worked on over time to help with my C++ programming, where tasks from the ProjectEuler.net archive are solved.
