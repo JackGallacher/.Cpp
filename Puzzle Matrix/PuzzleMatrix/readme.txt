@@ -1,0 +1,1 @@
+Using matrices, this program lets you lead in a jumbled image along with its noisy version and reconstucts it, saving it to a new file. To open these image files, you need to download ImageJ or some other form of text to image processor.
