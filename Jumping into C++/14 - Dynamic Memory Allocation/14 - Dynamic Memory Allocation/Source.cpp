@@ -273,7 +273,6 @@ void friends_list()
 	}
 	delete[] friend_array;
 }
-
 int main()
 {
 	//multiplication_table(25, 22);
