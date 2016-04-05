@@ -26,7 +26,7 @@ void GetDiet(Animal* AnimalToGetDiet)//We can pass any child class from Animal i
 string ReverseString(string myString)
 {
 	string ReversedString = "";
-	for (char &c : myString)
+	for each(char c in myString)
 	{
 		ReversedString = c + ReversedString;
 	}
@@ -55,19 +55,19 @@ void FindMatchingInArray(int ArrayOne[], int ArrayTwo[], int Size1, int Size2)
 
 int main()
 {
-	int Array1[6] = { 1, 2, 3, 4, 5, 7 };
-	int Array2[5] = { 3, 2, 9, 3, 7 };
-	FindMatchingInArray(Array1, Array2, sizeof(Array1)/sizeof(Array1[0]), sizeof(Array2)/sizeof(Array2[0]));
+	//int Array1[6] = { 1, 2, 3, 4, 5, 7 };
+	//int Array2[5] = { 3, 2, 9, 3, 7 };
+	//FindMatchingInArray(Array1, Array2, sizeof(Array1)/sizeof(Array1[0]), sizeof(Array2)/sizeof(Array2[0]));
 
 	//Dog* myDog = new Dog;
 	//GetDiet(myDog);
 
-	//string StringToReverse = "";
+	string StringToReverse = "";
 
-	//cout << "Please input a string that you would like to reverse:";
-	//getline(cin, StringToReverse);
+	cout << "Please input a string that you would like to reverse:";
+	getline(cin, StringToReverse);
 
-	//cout << ReverseString(StringToReverse) << "\n";
+	cout << ReverseString(StringToReverse) << "\n";
 
 	system("pause");
 }
